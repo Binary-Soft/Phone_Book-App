@@ -1,15 +1,15 @@
 const Listitem = (props) => {
-//    const {product} = props
+   const {listItem} = props
     return (
         <>
             <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+                <th scope="row">{listItem.id}</th>
+                <td>{listItem.name}</td>
+                <td>{listItem.email}</td>
+                <td>{listItem.phone}</td>
+                <td>{listItem.country}</td>
+                <td>{listItem.city}</td>
+                <td>{listItem.address}</td>
             </tr>
        </>
     )
