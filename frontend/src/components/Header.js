@@ -5,10 +5,10 @@ class Header extends Component {
 
     componentDidMount(){
         axios.get('http://127.0.0.1:8000/Home/')
-        .then(res=>res.json())
-        .then(result=>{
-            console.log(result)
-        })
+        .then(function (response) {
+            // handle success
+            console.log(response);
+          })
     }
 
     render(){
