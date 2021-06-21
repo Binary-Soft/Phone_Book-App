@@ -4,6 +4,7 @@ from .models import Users_info
 
 
 class Users_infoSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
     name = serializers.CharField(max_length=30)
     email = serializers.EmailField()
     phone = serializers.IntegerField()
