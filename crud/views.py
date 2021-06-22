@@ -6,6 +6,7 @@ import io
 from rest_framework.parsers import JSONParser
 
 # Create your views here.
+
 def infolist(request):
     if request.method == 'GET':
         json_data = request.body
@@ -20,7 +21,7 @@ def infolist(request):
 
         ID = python_data.get('id', None)
         if ID is not None:
-            try :
+            try:
                 info = Users_info.objects.get(id=ID)
             except Users_info.DoesNotExist:
                 python_data = {'Error_msg': 'User Not Found'}
