@@ -1,6 +1,6 @@
 import Listitem from "./Listitem"
 import { useState, useEffect, useContext } from 'react'
-
+import '../App.css'
 const ListItems = () => {
 
     const [listItems, setItems] = useState([])
@@ -10,7 +10,7 @@ const ListItems = () => {
             .then(response => response.json())
             .then(listItems => {
                 setItems(listItems)
-                console.log(listItems)
+                // console.log(listItems)
             })
     }, [])
 
@@ -35,8 +35,8 @@ const ListItems = () => {
         //         </tbody>
         //     </table>
         // </div>
-     <div className="container">
-         <div className="row justify-content-md-center">
+     <div className="container  ">
+         <div className="row justify-content-md-center ">
          {
              listItems.map(listItem=> <Listitem key={listItem.id} listItem={listItem}/>)
          }
