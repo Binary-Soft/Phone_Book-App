@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.search_input{
+  margin-left: 700px
+}
+
+.Head_line{
+  margin-left: 90px
+}
+
+.Add_button{
+  margin-right: 100px
+}
