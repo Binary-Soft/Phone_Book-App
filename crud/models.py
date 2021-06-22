@@ -8,6 +8,7 @@ class Users_info(models.Model):
     country = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
     address = models.CharField(max_length=50)
+    picture = models.ImageField(upload_to='profile')
 
     def __str__(self):
         return self.email

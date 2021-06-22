@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from .models import Users_info
 
 
 
@@ -11,3 +10,4 @@ class Users_infoSerializer(serializers.Serializer):
     country = serializers.CharField(max_length=20)
     city = serializers.CharField(max_length=20)
     address = serializers.CharField(max_length=50)
+    picture = serializers.ImageField()
