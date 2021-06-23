@@ -11,7 +11,7 @@ const Add = () => {
         country: "",
         city: "",
         address: "",
-        isSuccess : true
+        isSuccess: true
     })
 
     function submit(event) {
@@ -25,12 +25,11 @@ const Add = () => {
             address: data.address
         }).then(res => {
             console.log(res.data.success_or_error_message)
-            if(res.data.success_or_error_message === 'Save Success')
-            {
+            if (res.data.success_or_error_message === 'Save Success') {
                 console.log('Succeesfull')
                 window.location.reload()
             }
-            else{
+            else {
                 window.alert(res.data.success_or_error_message);
             }
         })

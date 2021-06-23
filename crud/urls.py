@@ -5,4 +5,5 @@ app_name = 'crud'
 
 urlpatterns = [ 
     path('', views.infolist, name='list info'),
+    path('<int:pk>/', views.Specific_User, name='SpecificUserInfo'),
 ]

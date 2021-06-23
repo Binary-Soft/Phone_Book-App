@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import '../App.css'
 const Listitem = (props) => {
     const { listItem } = props
@@ -16,10 +17,12 @@ const Listitem = (props) => {
 
                        
             <div className="card Grid_layout" Style="width: 14rem;">
+                <Link to={`/contact/${listItem.id}`}>
                 <img src={`http://127.0.0.1:8000${listItem.picture}`} className="card-img-top" alt="..." />
                 <div className="card-body ">
                     <h5 className="card-text text-center">{listItem.name}</h5>
                 </div>
+                </Link>
             </div>
         </>
     )

@@ -22,6 +22,7 @@ def infolist(request):
             return HttpResponse(json_data, content_type='application\json')
 
         ID = python_data.get('id', None)
+        print('\n\n',ID,'\n\n')
         if ID is not None:
             try:
                 info = Users_info.objects.get(id=ID)
@@ -51,3 +52,20 @@ def infolist(request):
             return HttpResponse(json_data, content_type='application\json')
 
 
+
+
+def Specific_User(request, pk):
+    if request.method == 'GET':
+        specificuser = Users_info.objects.get(pk=pk)
+        print('\n\n', specificuser.name, '\n\n')
+        serializer = Users_infoSerializer(specificuser)
+        json_data = JSONRenderer().render(serializer.data)
+        print('\n\n', json_data, '\n\n')
+        return HttpResponse(json_data, content_type='application')
+
+    elif request.method == 'DELETE':
+        print('\n\n Delete Request \n\n')
+        specificuser = Users_info.objects.get(pk=pk)
+        specificuser.delete()
+        python_data = {'success_msg': 'Delete Successfully'}
+        return JsonResponse(python_data, safe=False)
