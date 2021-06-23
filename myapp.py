@@ -19,7 +19,7 @@ def display_all(id=None):
 
 
 def POST_DATA():
-    python_data = {'name':'jack pritom', 'email': 'jackpri@gmail.com', 'phone':4545, 'country':'USA', 'city':'ting', 'address': 'jsgd'}
+    python_data = {'name':'jack pritom', 'email': 'jackpri687@gmail.com', 'phone':4545, 'country':'USA', 'city':'ting', 'address': 'jsgd'}
     json_data = json.dumps(python_data)
     r = requests.post(url=URL, data=json_data)
     data = r.json()

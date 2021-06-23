@@ -39,11 +39,14 @@ def infolist(request):
         python_data = JSONParser().parse(stream)
         serializer = Users_infoSerializer(data=python_data)
         if serializer.is_valid():
-            serializer.save()
-            python_data = {'success_msg': 'Save success'}
+            try :
+                serializer.save()
+            except Exception as e:
+                python_data = {'success_or_error_message': 'This E-mail Already Used'}
+                return JsonResponse(python_data, safe=False)
+            python_data = {'success_or_error_message': 'Save Success'}
             return JsonResponse(python_data, safe=False)
         else:
-            print('\n\n', serializer.errors, '\n\n')
             json_data = JSONRenderer().render(serializer.errors)
             return HttpResponse(json_data, content_type='application\json')
 
