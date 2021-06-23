@@ -1,5 +1,7 @@
+import '../App.css'
 const Listitem = (props) => {
     const { listItem } = props
+    console.log(listItem.picture)
     return (
         <>
             {/* <tr>
@@ -13,15 +15,12 @@ const Listitem = (props) => {
             </tr> */}
 
                        
-            <div className="card" Style="width: 14rem;">
-                <img src="https://www.holmaninsures.com/wp-content/uploads/2017/11/demo-sm-men-pic.jpg" className="card-img-top" alt="..." />
+            <div className="card Grid_layout" Style="width: 14rem;">
+                <img src={`http://127.0.0.1:8000${listItem.picture}`} className="card-img-top" alt="..." />
                 <div className="card-body ">
                     <h5 className="card-text text-center">{listItem.name}</h5>
                 </div>
             </div>
-
-
-           
         </>
     )
 }
