@@ -24,13 +24,14 @@ const Add = () => {
             city: data.city,
             address: data.address
         }).then(res => {
-            console.log(res.data.success_msg)
-            if(res.data.success_msg !== 'Save success')
+            console.log(res.data.success_or_error_message)
+            if(res.data.success_or_error_message === 'Save Success')
             {
-                console.log('error ,,,data error')
-                setState({...data , isSuccess: false})
-                
-
+                console.log('Succeesfull')
+                window.location.reload()
+            }
+            else{
+                window.alert(res.data.success_or_error_message);
             }
         })
         // window.location.reload();
