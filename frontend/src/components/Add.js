@@ -10,8 +10,8 @@ const Add = () => {
         phone: "",
         country: "",
         city: "",
-        adress: ""
-
+        address: "",
+        isSuccess : true
     })
 
     function submit(event) {
@@ -22,17 +22,25 @@ const Add = () => {
             phone: data.phone,
             country: data.country,
             city: data.city,
-            adress: data.adress
+            address: data.address
         }).then(res => {
-            console.log(res)
+            console.log(res.data.success_msg)
+            if(res.data.success_msg !== 'Save success')
+            {
+                console.log('error ,,,data error')
+                setState({...data , isSuccess: false})
+                
+
+            }
         })
+        // window.location.reload();
     }
 
     function handle(event) {
         const newData = { ...data }
         newData[event.target.id] = event.target.value
         setData(newData)
-        console.log(newData)
+        // console.log(newData)
     }
 
     return (
@@ -57,12 +65,12 @@ const Add = () => {
                                 <p className="add_phone">Phone:  <input onChange={(event) => handle(event)} id="phone" value={data.phone} placeholder="Enter your Phone...." type='number'></input></p>
                                 <p className="add_country"> Country:  <input onChange={(event) => handle(event)} id="country" value={data.country} placeholder="Enter your Country...." type='text'></input></p>
                                 <p className="add_city">City:  <input onChange={(event) => handle(event)} id="city" value={data.city} placeholder="Enter your City...." type='text'></input></p>
-                                <p>Adress:  <input onChange={(event) => handle(event)} id="adress" value={data.adress} placeholder="Enter your Adress...." type='text'></input></p>
+                                <p>Address:  <input onChange={(event) => handle(event)} id="address" value={data.address} placeholder="Enter your Address...." type='text'></input></p>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button onClick={(event)=>submit(event)}type="button" class="btn btn-primary">Add</button>
+                            <button onClick={(event) => submit(event)} type="button" class="btn btn-primary">Add</button>
                         </div>
                     </div>
                 </div>
