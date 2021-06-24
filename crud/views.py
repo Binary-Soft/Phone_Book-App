@@ -53,14 +53,12 @@ def infolist(request):
 
 
 
-
+@csrf_exempt
 def Specific_User(request, pk):
     if request.method == 'GET':
         specificuser = Users_info.objects.get(pk=pk)
-        print('\n\n', specificuser.name, '\n\n')
         serializer = Users_infoSerializer(specificuser)
         json_data = JSONRenderer().render(serializer.data)
-        print('\n\n', json_data, '\n\n')
         return HttpResponse(json_data, content_type='application')
 
     elif request.method == 'DELETE':
