@@ -21,12 +21,13 @@ const ContactSeparate = () => {
                 <img src={`http://127.0.0.1:8000${listItems.picture}`} className="card-img-top" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title">{listItems.name}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">Email: {listItems.email}</li>
+                    <li class="list-group-item">Phone: {listItems.phone}</li>
+                    <li class="list-group-item">Country: {listItems.country}</li>
+                    <li class="list-group-item">City: {listItems.city}</li>
+                    <li class="list-group-item">Address: {listItems.address}</li>
                 </ul>
                 <div class="card-body">
                    <button type="button" class="btn btn-primary">Edit</button>

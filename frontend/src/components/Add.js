@@ -11,7 +11,6 @@ const Add = () => {
         country: "",
         city: "",
         address: "",
-        isSuccess: true
     })
 
     function submit(event) {
@@ -22,7 +21,7 @@ const Add = () => {
             phone: data.phone,
             country: data.country,
             city: data.city,
-            address: data.address
+            address: data.address,
         }).then(res => {
             console.log(res.data.success_or_error_message)
             if (res.data.success_or_error_message === 'Save Success') {
@@ -37,6 +36,7 @@ const Add = () => {
                 window.alert(res.data.success_or_error_message);
             }
         })
+       
         // window.location.reload();
     }
 
@@ -44,6 +44,7 @@ const Add = () => {
         const newData = { ...data }
         newData[event.target.id] = event.target.value
         setData(newData)
+        console.log(event.target.files)
         // console.log(newData)
     }
 
