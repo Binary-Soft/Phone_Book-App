@@ -10,7 +10,7 @@ const ContactSeparate = () => {
             .then(response => response.json())
             .then(listItems => {
                 setItems(listItems)
-                console.log(listItems)
+                // console.log(listItems)
                
             })
     }, [params._id])

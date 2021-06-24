@@ -1,23 +1,28 @@
 import axios from "axios"
-import { useState,useEffect } from "react"
-import {useParams} from 'react-router-dom'
+import { useState, useEffect } from "react"
+import { useParams } from 'react-router-dom'
 
 
 
 
-const DeleteButton = (event) => {
+const DeleteButton = () => {
 
-    function DeleteFunction ()
-{
-    
     const params = useParams()
-    
+    // console.log(param)
 
-        fetch(`http://127.0.0.1:8000/Home/${params._id}/`,{method: 'DELETE'})
-          
-    
-}
-  
+    function DeleteFunction(event) {
+
+     console.log(params)
+
+     axios.delete(`http://127.0.0.1:8000/Home/${params._id}/`)
+     .then(response =>{
+         console.log(response)
+     })
+
+
+
+    }
+
 
     return (
         <>
@@ -33,11 +38,11 @@ const DeleteButton = (event) => {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          <h6>Do you really want to delete ?</h6>
+                            <h6>Do you really want to delete ?</h6>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                            <button onClick={(event) => DeleteFunction(event)}  type="button" class="btn btn-primary">Yes</button>
+                            <button onClick={(event) => DeleteFunction(event)} type="button" class="btn btn-primary">Yes</button>
                         </div>
                     </div>
                 </div>
