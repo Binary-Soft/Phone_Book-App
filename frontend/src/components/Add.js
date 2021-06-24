@@ -29,6 +29,10 @@ const Add = () => {
                 console.log('Succeesfull')
                 window.location.reload()
             }
+            else if(res.data.success_or_error_message ===undefined) {
+                window.alert('Please Fill the Blanks');
+            }
+           
             else {
                 window.alert(res.data.success_or_error_message);
             }

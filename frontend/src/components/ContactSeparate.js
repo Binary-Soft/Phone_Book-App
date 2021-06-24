@@ -16,7 +16,7 @@ const ContactSeparate = () => {
     }, [params._id])
 
     return (
-        <div>
+        <div className="separate_page">
             <div class="card" Style="width: 18rem;">
                 <img src={`http://127.0.0.1:8000${listItems.picture}`} className="card-img-top" alt="..." />
                 <div class="card-body">

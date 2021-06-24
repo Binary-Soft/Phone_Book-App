@@ -15,9 +15,18 @@ const DeleteButton = () => {
      console.log(params)
 
      axios.delete(`http://127.0.0.1:8000/Home/${params._id}/`)
-     .then(response =>{
-         console.log(response)
-     })
+     .then(res => {
+        console.log(res.data.success_msg)
+        console.log(res)
+        if (res.data.success_msg === 'Delete Successfully') {
+            console.log('Succeesfull')
+            window.alert(res.data.success_msg);
+            window.location.replace('/')
+        }
+        else {
+            window.alert("Sorry Facing Trouble");
+        }
+    })
 
 
 
