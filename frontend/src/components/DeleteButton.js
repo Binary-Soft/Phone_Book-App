@@ -1,8 +1,7 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
-
-
+import '../App.css'
 
 
 const DeleteButton = () => {
@@ -47,6 +46,7 @@ const DeleteButton = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
+                            <img className='delete_img'src='../images/delete.gif'/>
                             <h6>Do you really want to delete ?</h6>
                         </div>
                         <div className="modal-footer">
