@@ -1,5 +1,5 @@
 import Listitem from "./Listitem"
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import '../App.css'
 const ListItems = () => {
 
@@ -24,7 +24,7 @@ const ListItems = () => {
     </div>) : (
         <div className="text-center">
             <h4 className="empty_text">Contact is Empty</h4>
-            <img className="empty_image" src='../images/empty.gif'/>
+            <img className="empty_image" src='../images/empty.gif' alt=''/>
         </div>
     )
 
