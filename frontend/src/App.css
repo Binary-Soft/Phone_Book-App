@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -38,15 +44,15 @@
 }
 
 .search_input{
-  margin-left: 700px
+  margin-left: 50%
 }
 
 .Head_line{
-  margin-left: 90px
+  margin-left: 9%
 }
 
 .Add_button{
-  margin-right: 100px
+  margin-right: 3%
 }
 
 .Grid_layout{
@@ -54,8 +60,15 @@
   margin-left: 50px;
 }
 
-.add_email{
-  padding-left: 4px;
+.container{
+  
+    width: 500px;
+    clear: both;
+
+}
+.container input {
+  width: 100%;
+  clear: both;
 }
 .front_img{
   height: 200px;
@@ -81,4 +94,9 @@
 {
   height: 2%;
   width: 12%;
+}
+
+.list_items
+{
+  padding: 2%;
 }

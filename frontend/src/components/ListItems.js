@@ -15,7 +15,7 @@ const ListItems = () => {
     }, [])
 
     return listItems.length ? (<div className="container  ">
-        <div className="row justify-content-md-center ">
+        <div className="row justify-content-md-center list_items">
             {
                 listItems.map(listItem => <Listitem key={listItem.id} listItem={listItem} />)
             }

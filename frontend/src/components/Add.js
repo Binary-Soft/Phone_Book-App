@@ -63,7 +63,7 @@ const Add = () => {
                             <h5 className="modal-title" id="exampleModalLabel">Add Details</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body container">
                             <form onSubmit={(event) => submit(event)}>
                                 <p>Name: <input onChange={(event) => handle(event)} id="name" value={data.name} placeholder="Enter your Name...." type='text'></input></p>
                                 <p className="add_email">Email:  <input onChange={(event) => handle(event)} id="email" value={data.email} placeholder="Enter your Email...." type='email'></input></p>
