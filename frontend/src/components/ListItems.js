@@ -22,9 +22,9 @@ const ListItems = (props) => {
                 listItems.filter((value)=>{
                     if(data=='')
                     {
-                        return value
+                      return value
                     }
-                    else if (value.listItems.name.toLowerCase().includes(data.toLowerCase())){
+                    else if (value.name.toLowerCase().includes(data.toLowerCase())){
                         return value
                     }
                 }).map(listItem => <Listitem key={listItem.id} listItem={listItem} />)
