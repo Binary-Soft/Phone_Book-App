@@ -1,5 +1,6 @@
 import AddPage from './AddPage'
 import '../App.css'
+import Search from './Search'
 
 const Navigation = () => {
 
@@ -8,9 +9,7 @@ const Navigation = () => {
             <nav className="navbar navbar-light bg-dark">
                 <div className="container-fluid">
                     <span className="navbar-brand mb-0 h1 text-white Head_line">Contact Book</span>
-                    <div className="search_input">
-                        <input type="text" className="form-control" placeholder="Search" aria-label="Search"></input>
-                    </div>
+                      <Search/>
                     <div className="Add_button"><AddPage /></div>
                 </div>
 

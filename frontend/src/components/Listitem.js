@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import '../App.css'
 const Listitem = (props) => {
     const { listItem } = props
-    console.log(listItem.picture)
+    // console.log(listItem.picture)
     return (
         <>
             {/* <tr>
