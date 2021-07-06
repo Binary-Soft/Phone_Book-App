@@ -1,6 +1,7 @@
-import { useState,useEffect } from "react"
-import {useParams,useHistory } from 'react-router-dom'
+import { useState, useEffect } from "react"
+import { useParams, useHistory } from 'react-router-dom'
 import DeleteButton from './DeleteButton'
+import Edit from './Edit'
 const ContactSeparate = () => {
 
     const [listItems, setItems] = useState({})
@@ -12,7 +13,7 @@ const ContactSeparate = () => {
             .then(listItems => {
                 setItems(listItems)
                 // console.log(listItems)
-               
+
             })
     }, [params._id])
 
@@ -31,10 +32,10 @@ const ContactSeparate = () => {
                     <li className="list-group-item">Address: {listItems.address}</li>
                 </ul>
                 <div className="card-body">
-                   <button type="button" className="btn btn-primary">Edit</button>
-                   <DeleteButton/>
+                    <Edit/>
+                    <DeleteButton />
                 </div>
-                <button className="btn btn-primary" onClick={() =>{history.goBack()}}><i className="fas fa-arrow-left"></i></button>
+                <button className="btn btn-primary" onClick={() => { history.goBack() }}><i className="fas fa-arrow-left"></i></button>
             </div>
 
         </div>

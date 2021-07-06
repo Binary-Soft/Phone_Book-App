@@ -1,9 +1,9 @@
 import Add from './Add'
 
-const AddPage =()=>{
-    return(
+const AddPage = () => {
+    return (
         <div>
-            <Add/>
+            <Add />
         </div>
     )
 }

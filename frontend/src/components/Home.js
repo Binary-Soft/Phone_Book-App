@@ -1,10 +1,10 @@
 import ListItems from './ListItems'
 
 const Home = () => {
-    return(
-    <div>
-       <ListItems/>
-    </div>
+    return (
+        <div>
+            <ListItems />
+        </div>
     )
 }
 

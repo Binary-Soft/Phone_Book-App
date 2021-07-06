@@ -1,20 +1,20 @@
 import axios from 'axios'
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 
 class Header extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get('http://127.0.0.1:8000/Home/')
-        .then(function (response) {
-            // handle success
-            console.log(response);
-          })
+            .then(function (response) {
+                // handle success
+                console.log(response);
+            })
     }
 
-    render(){
+    render() {
         return (
             <div className='text-center'>
-                <img/>
+                <img />
                 <h1>Project</h1>
             </div>
         )

@@ -10,21 +10,21 @@ const DeleteButton = () => {
 
     function DeleteFunction(event) {
 
-     console.log(params)
+        console.log(params)
 
-     axios.delete(`http://127.0.0.1:8000/Home/${params._id}/`)
-     .then(res => {
-        console.log(res.data.success_msg)
-        console.log(res)
-        if (res.data.success_msg === 'Delete Successfully') {
-            console.log('Succeesfull')
-            window.alert(res.data.success_msg);
-            window.location.replace('/')
-        }
-        else {
-            window.alert("Sorry Facing Trouble");
-        }
-    })
+        axios.delete(`http://127.0.0.1:8000/Home/${params._id}/`)
+            .then(res => {
+                console.log(res.data.success_msg)
+                console.log(res)
+                if (res.data.success_msg === 'Delete Successfully') {
+                    console.log('Succeesfull')
+                    window.alert(res.data.success_msg);
+                    window.location.replace('/')
+                }
+                else {
+                    window.alert("Sorry Facing Trouble");
+                }
+            })
 
 
 
@@ -45,7 +45,7 @@ const DeleteButton = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <img className='delete_img'src='../images/delete.gif' alt=''/>
+                            <img className='delete_img' src='../images/delete.gif' alt='' />
                             <h6>Do you really want to delete ?</h6>
                         </div>
                         <div className="modal-footer">

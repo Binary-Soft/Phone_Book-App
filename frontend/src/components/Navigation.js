@@ -9,7 +9,7 @@ const Navigation = () => {
             <nav className="navbar navbar-light bg-dark">
                 <div className="container-fluid">
                     <span className="navbar-brand mb-0 h1 text-white Head_line">Contact Book</span>
-                      <Search/>
+                    <Search />
                     <div className="Add_button"><AddPage /></div>
                 </div>
 
