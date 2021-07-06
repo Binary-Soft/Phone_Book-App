@@ -4,7 +4,7 @@ from django.db import models
 class Users_info(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField(unique=True)
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=20)
     country = models.CharField(max_length=20)
     city = models.CharField(max_length=20)
     address = models.CharField(max_length=50)
