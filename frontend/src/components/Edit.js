@@ -6,7 +6,7 @@ const Edit = () => {
 
     const params = useParams()
     // console.log(param)
-    const [data,setData] = useState({
+    const [data, setData] = useState({
         name: "",
         email: "",
         phone: "",
@@ -22,6 +22,8 @@ const Edit = () => {
         console.log(event.target.files)
         console.log(newData)
     }
+
+
 
     function submit(event) {
         event.preventDefault();
@@ -55,38 +57,38 @@ const Edit = () => {
 
     return (
         <>
-           
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-   Edit
-</button>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EDIT">
+                Full Edit
+            </button>
 
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Edit</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div className="modal-body container">
-                            <form onSubmit={(event) => submit(event)}>
-                                <p>Name: <input onChange={(event) => handle(event)} id="name" placeholder="Enter your ...." type='text' value={data.name}></input></p>
-                                <p className="add_email">Email:  <input onChange={(event) => handle(event)} id="email"  placeholder="Enter your Email...." type='email'value={data.email}></input></p>
-                                <p className="add_phone">Phone:  <input onChange={(event) => handle(event)} id="phone"  placeholder="Enter your Phone...." type='number' value={data.phone}></input></p>
-                                <p className="add_country"> Country: <input onChange={(event) => handle(event)} id="country" placeholder="Enter your Country...." type='text' value={data.country}></input></p>
-                                <p className="add_city">City:  <input  onChange={(event) => handle(event)}  id="city"  placeholder="Enter your City...." type='text' value={data.city}></input></p>
-                                <p>Address:  <input  id="address" onChange={(event) => handle(event)} placeholder="Enter your Address...." type='text'value={data.address}></input></p>
-                            </form>
+            <div class="modal fade" id="EDIT" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Edit</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button onClick={(event) => submit(event)} type="button" class="btn btn-primary">Change</button>
-      </div>
-    </div>
-  </div>
-</div>
+                        <div class="modal-body">
+                            <div className="modal-body container">
+                                <form onSubmit={(event) => submit(event)}>
+                                    <p>Name: <input onChange={(event) => handle(event)} id="name" placeholder="Enter your Name...." type='text' value={data.name}></input></p>
+                                    <p className="add_email">Email:  <input onChange={(event) => handle(event)} id="email" placeholder="Enter your Email...." type='email' value={data.email}></input></p>
+                                    <p className="add_phone">Phone:  <input onChange={(event) => handle(event)} id="phone" placeholder="Enter your Phone...." type='number' value={data.phone}></input></p>
+                                    <p className="add_country"> Country: <input onChange={(event) => handle(event)} id="country" placeholder="Enter your Country...." type='text' value={data.country}></input></p>
+                                    <p className="add_city">City:  <input onChange={(event) => handle(event)} id="city" placeholder="Enter your City...." type='text' value={data.city}></input></p>
+                                    <p>Address:  <input id="address" onChange={(event) => handle(event)} placeholder="Enter your Address...." type='text' value={data.address}></input></p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button onClick={(event) => submit(event)} data-bs-dismiss="modal" type="button" class="btn btn-primary">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

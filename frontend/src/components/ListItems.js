@@ -14,7 +14,7 @@ const ListItems = (props) => {
                 setItems(listItems)
                 console.log(listItems)
             })
-    }, [])
+    }, [listItems])
 
     return listItems.length ? (<div className="container  ">
         <div className="row justify-content-md-center list_items">

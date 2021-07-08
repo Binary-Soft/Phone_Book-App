@@ -15,7 +15,7 @@ const ContactSeparate = () => {
                 // console.log(listItems)
 
             })
-    }, [params._id])
+    }, [params._id,listItems])
 
     return (
         <div className="separate_page">
@@ -33,7 +33,7 @@ const ContactSeparate = () => {
                 </ul>
                 <div className="card-body">
                     <Edit/>
-                    <DeleteButton />
+                    <DeleteButton/>
                 </div>
                 <button className="btn btn-primary" onClick={() => { history.goBack() }}><i className="fas fa-arrow-left"></i></button>
             </div>

@@ -26,7 +26,7 @@ const Add = () => {
             console.log(res.data.success_or_error_message)
             if (res.data.success_or_error_message === 'Save Success') {
                 console.log('Succeesfull')
-                window.location.reload()
+                // window.location.reload()
             }
             else if (res.data.success_or_error_message === undefined) {
                 window.alert('Please Fill the Blanks');
@@ -75,7 +75,7 @@ const Add = () => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button onClick={(event) => submit(event)} type="button" className="btn btn-primary">Add</button>
+                            <button onClick={(event) => submit(event)} type="button" data-bs-dismiss="modal" className="btn btn-primary">Add</button>
                         </div>
                     </div>
                 </div>
