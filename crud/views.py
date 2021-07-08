@@ -34,6 +34,7 @@ def infolist(request):
             json_data = JSONRenderer().render(serializer.data)
             return HttpResponse(json_data, content_type='application\json')
     
+
     elif request.method == 'POST':
         json_data = request.body
         stream = io.BytesIO(json_data)
@@ -59,14 +60,15 @@ def Specific_User(request, pk):
         specificuser = Users_info.objects.get(pk=pk)
         serializer = Users_infoSerializer(specificuser)
         json_data = JSONRenderer().render(serializer.data)
-        return HttpResponse(json_data, content_type='application')
+        return HttpResponse(json_data, content_type='application\json')
+
 
     elif request.method == 'DELETE':
-        print('\n\n Delete Request \n\n')
         specificuser = Users_info.objects.get(pk=pk)
         specificuser.delete()
         python_data = {'success_msg': 'Delete Successfully'}
         return JsonResponse(python_data, safe=False)
+    
     
     elif request.method == 'PUT':
         json_data = request.body
@@ -77,10 +79,12 @@ def Specific_User(request, pk):
         if serializer.is_valid():
             serializer.save()
             python_data = {'update message': 'Update Successfully'}
-            return JsonResponse(python_data, safe=False)
+        else:
+            python_data = {'update message': 'Update Failed'}
+        return JsonResponse(python_data, safe=False)
     
+
     elif request.method == 'PATCH':
-        print('\n\n testing \n\n')
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
@@ -89,4 +93,5 @@ def Specific_User(request, pk):
         if serializer.is_valid():
             serializer.save()
             python_data = {'update message': 'Update Successfully'}
-            return JSONParser(python_data, safe=False)
+            json_data = JSONRenderer().render(python_data)
+            return HttpResponse(json_data, content_type='application\json')
