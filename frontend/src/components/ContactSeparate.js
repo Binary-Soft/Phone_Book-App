@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useHistory } from 'react-router-dom'
 import DeleteButton from './DeleteButton'
 import Edit from './Edit'
+import IndividualEdit from './IndividualEdit'
 const ContactSeparate = () => {
 
     const [listItems, setItems] = useState({})
@@ -15,7 +16,7 @@ const ContactSeparate = () => {
                 // console.log(listItems)
 
             })
-    }, [params._id,listItems])
+    }, [params._id])
 
     return (
         <div className="separate_page">
@@ -32,8 +33,9 @@ const ContactSeparate = () => {
                     <li className="list-group-item">Address: {listItems.address}</li>
                 </ul>
                 <div className="card-body">
-                    <Edit/>
-                    <DeleteButton/>
+                    <Edit />
+                    <IndividualEdit/>
+                    <DeleteButton />
                 </div>
                 <button className="btn btn-primary" onClick={() => { history.goBack() }}><i className="fas fa-arrow-left"></i></button>
             </div>

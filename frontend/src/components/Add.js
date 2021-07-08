@@ -26,7 +26,7 @@ const Add = () => {
             console.log(res.data.success_or_error_message)
             if (res.data.success_or_error_message === 'Save Success') {
                 console.log('Succeesfull')
-                // window.location.reload()
+                window.location.reload()
             }
             else if (res.data.success_or_error_message === undefined) {
                 window.alert('Please Fill the Blanks');

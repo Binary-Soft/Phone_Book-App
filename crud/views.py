@@ -78,3 +78,15 @@ def Specific_User(request, pk):
             serializer.save()
             python_data = {'update message': 'Update Successfully'}
             return JsonResponse(python_data, safe=False)
+    
+    elif request.method == 'PATCH':
+        print('\n\n testing \n\n')
+        json_data = request.body
+        stream = io.BytesIO(json_data)
+        python_data = JSONParser().parse(stream)
+        users_info = Users_info.objects.get(pk=pk)
+        serializer = Users_infoSerializer(users_info, data=python_data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            python_data = {'update message': 'Update Successfully'}
+            return JSONParser(python_data, safe=False)

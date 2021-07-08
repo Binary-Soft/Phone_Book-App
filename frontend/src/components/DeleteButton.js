@@ -1,9 +1,6 @@
 import axios from "axios"
 import { useParams } from 'react-router-dom'
 import '../App.css'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
-
 const DeleteButton = () => {
 
     const params = useParams()
@@ -26,12 +23,7 @@ const DeleteButton = () => {
                     window.alert("Sorry Facing Trouble");
                 }
             })
-
-
-
     }
-
-
     return (
         <>
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
