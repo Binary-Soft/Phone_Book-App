@@ -16,7 +16,7 @@ const DeleteButton = () => {
                 console.log(res)
                 if (res.data.success_msg === 'Delete Successfully') {
                     console.log('Succeesfull')
-                    window.alert(res.data.success_msg);
+                   
                     window.location.replace('/')
                 }
                 else {
