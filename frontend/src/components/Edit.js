@@ -58,19 +58,19 @@ const Edit = () => {
     return (
         <>
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EDIT">
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EDIT">
                 Full Edit
             </button>
 
 
-            <div class="modal fade" id="EDIT" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Edit</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="EDIT" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="staticBackdropLabel">Edit</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <div className="modal-body container">
                                 <form onSubmit={(event) => submit(event)}>
                                     <p>Name: <input onChange={(event) => handle(event)} id="name" placeholder="Enter your Name...." type='text' value={data.name}></input></p>
@@ -82,7 +82,7 @@ const Edit = () => {
                                 </form>
                             </div>
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                             <button onClick={(event) => submit(event)} data-bs-dismiss="modal" type="button" class="btn btn-primary">Change</button>
                         </div>

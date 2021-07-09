@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -99,4 +99,16 @@ body{
 .list_items
 {
   padding: 2%;
+}
+
+p , li{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Input_edit
+{
+   
+   margin-bottom: 10px;
+   
+
 }
