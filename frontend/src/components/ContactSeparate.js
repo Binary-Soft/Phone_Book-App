@@ -18,6 +18,8 @@ const ContactSeparate = () => {
             })
     }, [params._id])
 
+
+
     return (
         <div className="separate_page">
             <div className="card" Style="width: 18rem;">
@@ -34,7 +36,7 @@ const ContactSeparate = () => {
                 </ul>
                 <div className="card-body">
                     <Edit />
-                    <IndividualEdit/>
+                    <IndividualEdit />
                     <DeleteButton />
                 </div>
                 <button className="btn btn-primary" onClick={() => { history.goBack() }}><i className="fas fa-arrow-left"></i></button>
