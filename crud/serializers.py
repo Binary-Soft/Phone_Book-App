@@ -12,6 +12,7 @@ class Users_infoSerializer(serializers.Serializer):
     city = serializers.CharField(max_length=20)
     address = serializers.CharField(max_length=50)
     picture = serializers.ImageField(required=False)
+    slug = serializers.SlugField(required=False)
 
     def create(self, validated_data):
         return Users_info.objects.create(**validated_data)
@@ -24,5 +25,6 @@ class Users_infoSerializer(serializers.Serializer):
         instance.city =     validated_data.get('city', instance.city)
         instance.address =  validated_data.get('address', instance.address)
         instance.picture =  validated_data.get('picture', instance.picture)
+        instance.slug =  validated_data.get('slug', instance.slug)
         instance.save()
         return instance

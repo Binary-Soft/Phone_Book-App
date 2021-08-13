@@ -10,17 +10,19 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 @csrf_exempt
 def infolist(request):
+
     if request.method == 'GET':
         json_data = request.body
         stream = io.BytesIO(json_data)
         try :
             python_data = JSONParser().parse(stream)
-        except Exception as e:
+        except Exception :
             info = Users_info.objects.all()
             serializer = Users_infoSerializer(info, many=True)
             json_data = JSONRenderer().render(serializer.data)
             return HttpResponse(json_data, content_type='application\json')
 
+        '''
         ID = python_data.get('id', None)
         if ID is not None:
             try:
@@ -32,6 +34,8 @@ def infolist(request):
             serializer = Users_infoSerializer(info)
             json_data = JSONRenderer().render(serializer.data)
             return HttpResponse(json_data, content_type='application\json')
+
+        '''
     
 
     elif request.method == 'POST':
@@ -54,16 +58,17 @@ def infolist(request):
 
 
 @csrf_exempt
-def Specific_User(request, pk):
+def Specific_User(request, st):
+
     if request.method == 'GET':
-        specificuser = Users_info.objects.get(pk=pk)
+        specificuser = Users_info.objects.get(slug=st)
         serializer = Users_infoSerializer(specificuser)
         json_data = JSONRenderer().render(serializer.data)
         return HttpResponse(json_data, content_type='application\json')
 
 
     elif request.method == 'DELETE':
-        specificuser = Users_info.objects.get(pk=pk)
+        specificuser = Users_info.objects.get(slug=st)
         specificuser.delete()
         python_data = {'success_msg': 'Delete Successfully'}
         return JsonResponse(python_data, safe=False)
@@ -73,7 +78,7 @@ def Specific_User(request, pk):
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-        users_info = Users_info.objects.get(pk=pk)
+        users_info = Users_info.objects.get(slug=st)
         serializer = Users_infoSerializer(users_info, data=python_data)
         if serializer.is_valid():
             serializer.save()
@@ -87,7 +92,7 @@ def Specific_User(request, pk):
         json_data = request.body
         stream = io.BytesIO(json_data)
         python_data = JSONParser().parse(stream)
-        users_info = Users_info.objects.get(pk=pk)
+        users_info = Users_info.objects.get(slug=st)
         serializer = Users_infoSerializer(users_info, data=python_data, partial=True)
         if serializer.is_valid():
             serializer.save()
