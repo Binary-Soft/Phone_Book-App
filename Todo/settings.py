@@ -79,6 +79,9 @@ WSGI_APPLICATION = 'Todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+# for local storage
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,12 +90,18 @@ WSGI_APPLICATION = 'Todo.wsgi.application'
 # }
 
 
+# for online server 
+
 DATABASES = {
-     'default': {
-         'ENGINE': 'djongo',
-         'NAME': 'testdb',
-     }
- }
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'your-db-name',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': 'mongodb+srv://admin:123@cluster0.xxc3x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+            }
+        }
+}
 
 
 # Password validation
